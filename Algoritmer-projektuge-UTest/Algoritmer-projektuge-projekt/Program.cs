@@ -16,8 +16,10 @@ namespace Algoritmer_projektuge_projekt
             list.Add(5);
             list.Add(2);
             list.Add(9);
+            list.Add(1);
+            list.Add(4);
 
-            //Sort list (WIP)
+            list.BubbleSort();
 
             //Skriv all numre ned
             foreach (var item in list)
@@ -27,7 +29,7 @@ namespace Algoritmer_projektuge_projekt
             Console.WriteLine("");
 
             //Få mængde af listens elementer
-            Console.WriteLine(list.CountAll());
+            Console.WriteLine(list.count); //list.CountAll()
 
             //Skriv indeks nummer 1 i listen (starter med 0)
             Console.WriteLine(list[0]);

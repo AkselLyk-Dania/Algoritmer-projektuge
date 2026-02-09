@@ -9,6 +9,7 @@ namespace Algoritmer_projektuge_projekt
 {
     //IEnumerable bruges til at iterere gennem elementer med foreach
     public class GenericList<T> : IEnumerable<T> //<T> er en placeholder til hvilken som helst type, som først er definieret fra variabler
+        where T : IComparable<T>
     {
         public T[] items; //Intern array, med brug af resize
         public int count;
@@ -16,7 +17,7 @@ namespace Algoritmer_projektuge_projekt
         public GenericList() //Constructor
         {
             items = new T[4]; //Start capacitet med 4
-            count = 0;
+            count = 0; //En tælling med hvor mange elementer der er
         }
 
         public IEnumerator<T> GetEnumerator() //Denne førger for at foreach virker
@@ -63,6 +64,29 @@ namespace Algoritmer_projektuge_projekt
         }
         
         //Få antal elementer i listen
-        public int CountAll() { return count; }
+        public int CountAll() { return count; } //Kan også bruges list.count
+
+
+        //Bubble Sort
+        public void BubbleSort()
+        {
+
+
+            bool swapped;
+            do
+            {
+                swapped = false;
+
+                for (int i = 1; i < CountAll(); i++)
+                {
+                    if (this[i - 1].CompareTo(this[i]) > 0)
+                    {
+                        (this[i - 1], this[i]) = (this[i], this[i - 1]); //(a,b) = (b,a)
+                        swapped = true;
+                    }
+                }
+
+            } while (swapped);
+        }
     }
 }
