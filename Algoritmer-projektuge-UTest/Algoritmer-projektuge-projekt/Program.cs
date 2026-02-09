@@ -10,7 +10,27 @@ namespace Algoritmer_projektuge_projekt
     {
         static void Main(string[] args)
         {
-            //Tes
+            GenericList<int> list = new GenericList<int>();
+
+            //Tilføj numre til listen
+            list.Add(5);
+            list.Add(2);
+            list.Add(9);
+
+            //Sort list (WIP)
+
+            //Skriv all numre ned
+            foreach (var item in list)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("");
+
+            //Få mængde af listens elementer
+            Console.WriteLine(list.CountAll());
+
+            //Skriv indeks nummer 1 i listen (starter med 0)
+            Console.WriteLine(list[0]);
         }
     }
 }
