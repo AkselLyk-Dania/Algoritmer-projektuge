@@ -19,20 +19,22 @@ namespace Algoritmer_projektuge_projekt
             list.Add(1);
             list.Add(4);
 
-            list.BubbleSort();
+            list.BubbleSort(); // 1, 2, 4, 5, 9
 
+            
             //Skriv all numre ned
             foreach (var item in list)
             {
                 Console.Write(item + " ");
             }
             Console.WriteLine("");
+            
 
             //Få mængde af listens elementer
-            Console.WriteLine(list.count); //list.CountAll()
+            //Console.WriteLine(list.count);
 
             //Skriv indeks nummer 1 i listen (starter med 0)
-            Console.WriteLine(list[0]);
+            //Console.WriteLine(list[0]);
         }
     }
 }

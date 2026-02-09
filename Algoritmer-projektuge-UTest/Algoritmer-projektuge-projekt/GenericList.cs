@@ -9,7 +9,7 @@ namespace Algoritmer_projektuge_projekt
 {
     //IEnumerable bruges til at iterere gennem elementer med foreach
     public class GenericList<T> : IEnumerable<T> //<T> er en placeholder til hvilken som helst type, som først er definieret fra variabler
-        where T : IComparable<T>
+        where T : IComparable<T> //Bruges til CompareTo
     {
         public T[] items; //Intern array, med brug af resize
         public int count;
@@ -70,14 +70,12 @@ namespace Algoritmer_projektuge_projekt
         //Bubble Sort
         public void BubbleSort()
         {
-
-
             bool swapped;
             do
             {
                 swapped = false;
 
-                for (int i = 1; i < CountAll(); i++)
+                for (int i = 1; i < this.count; i++)
                 {
                     if (this[i - 1].CompareTo(this[i]) > 0)
                     {
