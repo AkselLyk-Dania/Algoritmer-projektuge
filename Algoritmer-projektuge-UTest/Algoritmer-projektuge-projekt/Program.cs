@@ -19,9 +19,9 @@ namespace Algoritmer_projektuge_projekt
             list.Add(1);
             list.Add(4);
 
-            list.BubbleSort(); // 1, 2, 4, 5, 9
+            //list.BubbleSort(); //Bubble sort
+            list.InsertionSort(); //Insertion sort
 
-            
             //Skriv all numre ned
             foreach (var item in list)
             {
