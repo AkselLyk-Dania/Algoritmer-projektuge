@@ -56,15 +56,15 @@ namespace Algoritmer_projektuge_NET10
                 if (index < 0 || index >= count) throw new IndexOutOfRangeException(); //Hvis indeks er højere eller minus, viser konsollen fejl
                 return items[index];
             }
-            set //Erstatter nuværender indeks med en ny
+            set //Erstatter nuværende indeks med en ny
             {
                 if (index < 0 || index >= count) throw new IndexOutOfRangeException(); //Hvis indeks er højere eller minus, viser konsollen fejl
                 items[index] = value;
             }
         }
-        
-        //Få antal elementer i listen
-        public int CountAll() { return count; } //Kan også bruges list.count
+
+        //Få antal elementer i listen (list.count bruges i stedet for)
+        public int CountAll() { return count; }
 
 
         //Bubble Sort
@@ -103,7 +103,7 @@ namespace Algoritmer_projektuge_NET10
             T val; //element vi vil indsætte
             int pointer; //Hvor val skal placeres
 
-            for (int i = 1; i < this.count; i++) //vælg den næste element som starter ande element (første er allerede sorteret)
+            for (int i = 1; i < this.count; i++) //vælg den næste element (fordi første er allerede sorteret)
             {
                 val = this[i]; //element vi vil indsætte
                 pointer = i; //nummer af element
@@ -115,7 +115,7 @@ namespace Algoritmer_projektuge_NET10
                     pointer--;
                     StaticCounter.runs++;
                 }
-                this[pointer] = val; //rigtig position
+                this[pointer] = val; //Ny position
                 StaticCounter.runs++;
             }
         }
