@@ -33,9 +33,6 @@ namespace Algoritmer_projektuge_NET10
             // END OF "INPUT: Load .json"
             // ----------------------------
 
-            //Nulstil antal sammenligninger
-            StaticCounter.runs = 0;
-
             //Ny instance af "GenericList"
             GenericList<int> list = new GenericList<int>();
 
@@ -54,7 +51,7 @@ namespace Algoritmer_projektuge_NET10
                 Console.Write(item + " ");
             }
             Console.WriteLine(""); Console.WriteLine("");
-            Console.WriteLine("Antal sammenligninger: " + StaticCounter.runs);
+            Console.WriteLine("Antal sammenligninger: " + list.runs);
             Console.WriteLine("");
 
             // ----------------------------

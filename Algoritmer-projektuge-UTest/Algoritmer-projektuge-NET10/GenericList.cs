@@ -13,11 +13,13 @@ namespace Algoritmer_projektuge_NET10
     {
         public T[] items; //Intern array, med brug af resize
         public int count; //Hvor mange elementer der er tilføjet
+        public int runs; //Antal sammenligninger
 
         public GenericList() //Constructor
         {
             items = new T[4]; //Start capacitet med 4
             count = 0; //En tælling med hvor mange tilføjede elementer der er
+            runs = 0; //Antal sammenligninger
         }
 
         public IEnumerator<T> GetEnumerator() //Denne førger for at foreach virker
@@ -90,7 +92,7 @@ namespace Algoritmer_projektuge_NET10
                         (this[i - 1], this[i]) = (this[i], this[i - 1]); //(a,b) = (b,a)
                         swapped = true; //Hvis der sker en swap, ville den sættes til true
                     }
-                    StaticCounter.runs++;
+                    this.runs++;
                 }
 
             } while (swapped); //Loopen vil kun stoppe, hvis swapped ikke var sat til true (ingen swap)
@@ -113,10 +115,10 @@ namespace Algoritmer_projektuge_NET10
                 {
                     this[pointer] = this[pointer - 1]; //flytter den til venstre
                     pointer--;
-                    StaticCounter.runs++;
+                    this.runs++;
                 }
                 this[pointer] = val; //Ny position
-                StaticCounter.runs++;
+                this.runs++;
             }
         }
 
