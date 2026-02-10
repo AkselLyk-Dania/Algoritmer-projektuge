@@ -90,6 +90,7 @@ namespace Algoritmer_projektuge_NET10
                         (this[i - 1], this[i]) = (this[i], this[i - 1]); //(a,b) = (b,a)
                         swapped = true; //Hvis der sker en swap, ville den sættes til true
                     }
+                    StaticCounter.runs++;
                 }
 
             } while (swapped); //Loopen vil kun stoppe, hvis swapped ikke var sat til true (ingen swap)
@@ -112,8 +113,10 @@ namespace Algoritmer_projektuge_NET10
                 {
                     this[pointer] = this[pointer - 1]; //flytter den til venstre
                     pointer--;
+                    StaticCounter.runs++;
                 }
                 this[pointer] = val; //rigtig position
+                StaticCounter.runs++;
             }
         }
 

@@ -12,7 +12,9 @@ namespace Algoritmer_projektuge_NET10
             // ----------------------------
 
             //Få file path
-            string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json");
+            //string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "notSorted.json");
+            string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "reverseSorted.json");
+            //string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json");
 
             //Check om den eksisterer, hvis ikke stopper koden
             if (!File.Exists(filePath))
@@ -32,6 +34,8 @@ namespace Algoritmer_projektuge_NET10
             // END OF "INPUT: Load sorted.json"
             // ----------------------------
 
+            StaticCounter.runs = 0;
+
             //Ny instance af "GenericList"
             GenericList<int> list = new GenericList<int>();
 
@@ -41,7 +45,7 @@ namespace Algoritmer_projektuge_NET10
                 list.Add(numbers[i]);
             }
 
-            //list.BubbleSort(); //Bubble sort
+            list.BubbleSort(); //Bubble sort
             //list.InsertionSort(); //Insertion sort
 
             //Skriv all numre ned
@@ -50,6 +54,7 @@ namespace Algoritmer_projektuge_NET10
                 Console.Write(item + " ");
             }
             Console.WriteLine("");
+            Console.WriteLine("Antal sammenligninger: " + StaticCounter.runs);
 
         }
     }
