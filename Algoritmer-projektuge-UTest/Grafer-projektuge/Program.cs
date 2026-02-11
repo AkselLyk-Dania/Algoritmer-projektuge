@@ -14,7 +14,7 @@ namespace Grafer_projektuge
             //Ny instance af Forlystelsespark
             Forlystelsespark park = new Forlystelsespark();
 
-            //Definer forlystelser med deres strings
+            //Nye instancer af forlystelser med deres strings
             Node entrance = new Node("Entrance");
             Node rollerCoaster = new Node("RollerCoaster");
             Node ferrisWheel = new Node("FerrisWheel");
@@ -35,11 +35,13 @@ namespace Grafer_projektuge
             park.ConnectRides(ferrisWheel, waterRide);
             park.ConnectRides(waterRide, hauntedHouse);
 
-
+            //Set of bools, if visited or not
             HashSet<Node> visited = new HashSet<Node>();
+
+            //Visited nodes
             List<Node> path = new List<Node>();
 
-            //\n lever mellemrum i writeline
+            //\n laver mellemrum i writeline
             Console.WriteLine("Starting DFS...\n");
 
             //Metode, hvis vejen er fundet fra entrance til goal (hauntedhouse)
@@ -48,7 +50,12 @@ namespace Grafer_projektuge
             if (found)
             {
                 Console.WriteLine("\nPath found:");
-                Console.WriteLine(string.Join(" -> ", path));
+                for (int i = 0; i < path.Count; i++)
+                {
+                    Console.Write(path[i].Name);
+                    if (i < path.Count - 1) Console.Write(" -> ");
+                }
+                Console.WriteLine();
             }
             else Console.WriteLine("No path found.");
         }

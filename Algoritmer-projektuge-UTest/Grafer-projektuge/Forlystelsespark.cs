@@ -47,7 +47,7 @@ namespace Grafer_projektuge
                 }
             }
 
-            //Hvis det er en dead end, Backtrack
+            //Hvis ingen vej er fundet
             path.RemoveAt(path.Count - 1);
             return false;
         }
