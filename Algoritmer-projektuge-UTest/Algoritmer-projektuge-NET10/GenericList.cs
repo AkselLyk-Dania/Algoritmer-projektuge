@@ -22,7 +22,7 @@ namespace Algoritmer_projektuge_NET10
             runs = 0; //Antal sammenligninger
         }
 
-        public IEnumerator<T> GetEnumerator() //Denne førger for at foreach virker
+        public IEnumerator<T> GetEnumerator() //Denne sørger for at foreach virker
         {
             for (int i = 0; i < count; i++)
             {

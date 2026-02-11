@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Grafer_projektuge
+{
+    public class Edge
+    {
+        public Node From { get; set; }
+        public Node To { get; set; }
+
+        public Edge(Node from, Node to, int distance = 1)
+        {
+            From = from;
+            To = to;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Algoritmer-projektuge-NET10/Algoritmer-projektuge-NET10.csproj" Id="b79f5eac-e75b-4501-ae71-1a44902fe443" />
   <Project Path="Algoritmer-projektuge-UTest/Algoritmer-projektuge-UTest.csproj" />
+  <Project Path="Grafer-projektuge/Grafer-projektuge.csproj" Id="cdf17d92-eacf-4f5f-8326-b909ba58c3a1" />
 </Solution>
