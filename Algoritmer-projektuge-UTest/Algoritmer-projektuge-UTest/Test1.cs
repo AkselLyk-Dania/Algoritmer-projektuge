@@ -4,11 +4,12 @@ using System.Text.Json;
 namespace Algoritmer_projektuge_UTest
 {
     [TestClass]
-    public sealed class Test1 //Bubble sort
+    public class Test1 //Bubble sort
     {
         [TestMethod]
         public void TestMethod1()
         {
+            //Få actual, som køres igennem bubble sort
             string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "reverseSorted.json");
             string json = File.ReadAllText(filePath);
             var data = JsonSerializer.Deserialize<Dictionary<string, List<int>>>(json);
@@ -20,7 +21,7 @@ namespace Algoritmer_projektuge_UTest
                 actual.Add(numbers[i]);
             }
 
-
+            //Få expected, som bruger listed med sorted
             filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json");
             json = File.ReadAllText(filePath);
             data = JsonSerializer.Deserialize<Dictionary<string, List<int>>>(json);
@@ -34,6 +35,7 @@ namespace Algoritmer_projektuge_UTest
 
             actual.BubbleSort();
 
+            //test om begge collections er ens
             CollectionAssert.AreEqual(expected.ToArray(), actual.ToArray());
 
 

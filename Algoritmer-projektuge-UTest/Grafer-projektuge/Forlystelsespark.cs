@@ -19,16 +19,18 @@ namespace Grafer_projektuge
         public void ConnectRides(Node a, Node b)
         {
             Edge roadAB = new Edge(a, b);
-            Edge roadBA = new Edge(b, a); // Undirected
+            Edge roadBA = new Edge(b, a);
 
             a.edges.Add(roadAB);
             b.edges.Add(roadBA);
         }
 
-
+        //Depth first (følger dybden)
         public bool DFS(Node current, Node target, HashSet<Node> visited, List<Node> path)
         {
+            //Skriver det næste punkt
             Console.WriteLine("Visiting: " + current.Name);
+
 
             visited.Add(current);
             path.Add(current);

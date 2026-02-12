@@ -9,7 +9,7 @@ namespace Algoritmer_projektuge_NET10
 {
     //IEnumerable bruges til at iterere gennem elementer med foreach
     public class GenericList<T> : IEnumerable<T> //<T> er en placeholder til hvilken som helst type, som først er definieret fra variabler
-        where T : IComparable<T> //Så man kan bruge CompareTo med T
+        where T : IComparable<T> //T isoleres, og bliver arvet af IComparable så T kan bruge CompareTo
     {
         public T[] items; //Intern array, med brug af resize
         public int count; //Hvor mange elementer der er tilføjet

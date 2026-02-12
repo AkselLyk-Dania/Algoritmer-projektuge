@@ -26,7 +26,7 @@ namespace Algoritmer_projektuge_NET10
             if (key == '1') 
             { 
                 Console.Write("Sorteret tal: ");
-                filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json"); 
+                filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json");
             }
             else if (key == '2')
             {
@@ -40,7 +40,7 @@ namespace Algoritmer_projektuge_NET10
             }
             else 
             { 
-                Console.WriteLine("Character " + key + " is unassigned"); 
+                Console.WriteLine("Character " + key + " is unassigned");
                 return; 
             }
 

@@ -11,7 +11,7 @@ namespace Grafer_projektuge
         public Node From { get; set; }
         public Node To { get; set; }
 
-        public Edge(Node from, Node to, int distance = 1)
+        public Edge(Node from, Node to)
         {
             From = from;
             To = to;

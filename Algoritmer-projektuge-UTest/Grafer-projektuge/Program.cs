@@ -35,18 +35,20 @@ namespace Grafer_projektuge
             park.ConnectRides(ferrisWheel, waterRide);
             park.ConnectRides(waterRide, hauntedHouse);
 
-            //Set of bools, if visited or not
+            //En liste med noder som er kørt igennem
+            //HashSet er en liste som sørger for, at det samme element ikke bliver oprettet igen
             HashSet<Node> visited = new HashSet<Node>();
 
             //Visited nodes
             List<Node> path = new List<Node>();
 
-            //\n laver mellemrum i writeline
+            //\n laver enter i writeline
             Console.WriteLine("Starting DFS...\n");
 
-            //Metode, hvis vejen er fundet fra entrance til goal (hauntedhouse)
+            //Metode, hvis true er vejen er fundet fra entrance til goal (hauntedhouse), hvis false er vejen ikke fundet
             bool found = park.DFS(entrance, hauntedHouse, visited, path);
 
+            //Skriv den fulde vej fra start til slut
             if (found)
             {
                 Console.WriteLine("\nPath found:");
