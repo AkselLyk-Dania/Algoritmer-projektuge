@@ -10,10 +10,39 @@ namespace Algoritmer_projektuge_NET10
             // INPUT: Load .json
             // ----------------------------
 
+            //Menu til at vælge file path
+            string filePath = "[NO PATH]";
+
+            Console.WriteLine("Tryk enten 1, 2 eller 3 for at sortere en liste:");
+            Console.WriteLine("1. sorteret tal");
+            Console.WriteLine("2. omvendt sorteret tal");
+            Console.WriteLine("3. tilfældige tal\n");
+
+            char key = Console.ReadKey().KeyChar;
+
+            Console.WriteLine("");
+
             //Få file path
-            //string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json");
-            //string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "reverseSorted.json");
-            string filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "notSorted.json");
+            if (key == '1') 
+            { 
+                Console.Write("Sorteret tal: ");
+                filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "sorted.json"); 
+            }
+            else if (key == '2')
+            {
+                Console.Write("Omvendt sorteret tal: ");
+                filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "reverseSorted.json");
+            }
+            else if (key == '3')
+            {
+                Console.Write("Tilfældige tal: ");
+                filePath = Path.Combine(AppContext.BaseDirectory, "JSON_Data", "notSorted.json");
+            }
+            else 
+            { 
+                Console.WriteLine("Character " + key + " is unassigned"); 
+                return; 
+            }
 
             //Check om den eksisterer, hvis ikke stopper koden
             if (!File.Exists(filePath))
@@ -42,8 +71,30 @@ namespace Algoritmer_projektuge_NET10
                 list.Add(numbers[i]);
             }
 
-            list.BubbleSort(); //Bubble sort
-            //list.InsertionSort(); //Insertion sort
+            //Menu til at vælge sorterings-algoritme
+            Console.WriteLine("Vælg sorterings-algoritme:");
+            Console.WriteLine("1. Bubble sort");
+            Console.WriteLine("2. Insertion Sort\n");
+
+            key = Console.ReadKey().KeyChar;
+
+            Console.WriteLine("");
+
+            if (key == '1') //Bubble sort
+            { 
+                Console.WriteLine("Run bubble sort..."); 
+                list.BubbleSort(); 
+            }
+            else if (key == '2') //Insertion sort
+            { 
+                Console.WriteLine("Run insertion sort..."); 
+                list.InsertionSort(); 
+            }
+            else 
+            { 
+                Console.WriteLine("Character " + key + " is unassigned"); 
+                return; 
+            }
 
             //Skriv all numre ned + antal sammenligninger
             foreach (var item in list)
